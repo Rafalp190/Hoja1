@@ -18,6 +18,7 @@ public class GUIRadio extends JFrame {
 	private JTextField txtEmisora;
 	private JTextField textFieldEmisoraDisplay;
 	private RadioCarro carRadio;
+	private JButton forwardEmisora;
 
 	/**
 	 * Launch the application.
@@ -48,10 +49,10 @@ public class GUIRadio extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
 		
 		JButton botoONyOFF = new JButton("ON/OFF");
 		botoONyOFF.setBounds(27, 23, 71, 23);
-		panel.setLayout(null);
 		panel.add(botoONyOFF);
 		
 		JButton btnAmfm = new JButton("AM/FM");
@@ -82,7 +83,7 @@ public class GUIRadio extends JFrame {
 		backEmisora.setBounds(107, 119, 49, 23);
 		panel.add(backEmisora);
 		
-		JButton forwardEmisora = new JButton("-->");
+		forwardEmisora = new JButton("-->");
 		forwardEmisora.setBounds(251, 119, 49, 23);
 		panel.add(forwardEmisora);
 		
@@ -134,6 +135,105 @@ public class GUIRadio extends JFrame {
 		buttonEmisora12.setBounds(271, 193, 49, 23);
 		panel.add(buttonEmisora12);
 		
-		
+		botoONyOFF.addActionListener(new MiListener());
+		btnAmfm.addActionListener(new MiListener());
+		backEmisora.addActionListener(new MiListener());
+		forwardEmisora.addActionListener(new MiListener());
+		buttonEmisora1.addActionListener(new MiListener());
+		buttonEmisora2.addActionListener(new MiListener());
+		buttonEmisora3.addActionListener(new MiListener());
+		buttonEmisora4.addActionListener(new MiListener());
+		buttonEmisora5.addActionListener(new MiListener());
+		buttonEmisora6.addActionListener(new MiListener());
+		buttonEmisora7.addActionListener(new MiListener());
+		buttonEmisora8.addActionListener(new MiListener());
+		buttonEmisora9.addActionListener(new MiListener());
+		buttonEmisora10.addActionListener(new MiListener());
+		buttonEmisora11.addActionListener(new MiListener());
+		buttonEmisora12.addActionListener(new MiListener());
+
+
 	}
-}
+private class MiListener implements ActionListener{
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==botoONyOFF){
+			carRadio.setEncendido(carRadio.getEncendido());
+			boolean state = carRadio.getEncendido();
+			if (state==false){
+				btnAmfm.disable();
+				backEmisora.disable();
+				forwardEmisora.disable();
+				textFieldAMyFM.disable();
+				txtEmisora.disable();
+				textFieldEmisoraDisplay.disable();
+				buttonEmisora1.disable();
+				buttonEmisora2.disable();
+				buttonEmisora3.disable();
+				buttonEmisora4.disable();
+				buttonEmisora5.disable();
+				buttonEmisora6.disable();
+				buttonEmisora7.disable();
+				buttonEmisora8.disable();
+				buttonEmisora9.disable();
+				buttonEmisora10.disable();
+				buttonEmisora11.disable();
+				buttonEmisora12.disable();
+			else{
+				btnAmfm.enable();
+				backEmisora.enable();
+				forwardEmisora.enable();
+				textFieldAMyFM.enable();
+				txtEmisora.enable();
+				textFieldEmisoraDisplay.enable();
+				buttonEmisora1.enable();
+				buttonEmisora2.enable();
+				buttonEmisora3.enable();
+				buttonEmisora4.enable();
+				buttonEmisora5.enable();
+				buttonEmisora6.enable();
+				buttonEmisora7.enable();
+				buttonEmisora8.enable();
+				buttonEmisora9.enable();
+				buttonEmisora10.enable();
+				buttonEmisora11.enable();
+				buttonEmisora12.enable();
+			}
+			}
+		if (e.getSource()==btnAmfm){
+			carRadio.setFrecuencia(carRadio.getFrecuencia());
+			boolean freq = carRadio.getFrecuencia();
+			if (freq==true){
+				textFieldAMyFM.setText("FM");
+			}
+			else{
+				textFieldAMyFM.setText("AM");
+			}
+		}
+		if (e.getSource()==backEmisora){
+			double emi = carRadio.getEmisora();
+			if (emi==0){
+				emi= 150;
+			}
+			else
+				emi-= 1;
+			carRadio.setEmisora(emi);
+			txtEmisora.setText(String.valueOf(emi));
+		}
+		if (e.getSource()==forwardEmisora){
+			double emi = carRadio.getEmisora();
+			if (emi==150){
+				emi= 0;
+			}
+			else
+				emi+= 1;
+			carRadio.setEmisora(emi);
+			txtEmisora.setText(String.valueOf(emi));
+		}
+		if (e.getSource()==buttonEmisora1()){
+			carRadio.saveEmisora(1, carRadio.getEmisora());
+		}
+		}

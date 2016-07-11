@@ -11,6 +11,7 @@ public class RadioCarro implements Radio {
 	public RadioCarro() {
 		super();
 		botones= new double[12];
+		estado= false;
 		// TODO Auto-generated constructor stub
 	}
 
