@@ -19,6 +19,21 @@ public class GUIRadio extends JFrame {
 	private JTextField textFieldEmisoraDisplay;
 	private RadioCarro carRadio;
 	private JButton forwardEmisora;
+	private JButton botoONyOFF;
+	private JButton btnAmfm;
+	private JButton backEmisora;
+	private JButton buttonEmisora1;
+	private JButton buttonEmisora2;
+	private JButton buttonEmisora3;
+	private JButton buttonEmisora4;
+	private JButton buttonEmisora5;
+	private JButton buttonEmisora6;
+	private JButton buttonEmisora7;
+	private JButton buttonEmisora8;
+	private JButton buttonEmisora9;
+	private JButton buttonEmisora10;
+	private JButton buttonEmisora11;
+	private JButton buttonEmisora12;
 
 	/**
 	 * Launch the application.
@@ -51,11 +66,11 @@ public class GUIRadio extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton botoONyOFF = new JButton("ON/OFF");
+		botoONyOFF = new JButton("ON/OFF");
 		botoONyOFF.setBounds(27, 23, 71, 23);
 		panel.add(botoONyOFF);
 		
-		JButton btnAmfm = new JButton("AM/FM");
+		btnAmfm = new JButton("AM/FM");
 		btnAmfm.setBounds(323, 23, 65, 23);
 		panel.add(btnAmfm);
 		
@@ -79,7 +94,7 @@ public class GUIRadio extends JFrame {
 		panel.add(textFieldEmisoraDisplay);
 		textFieldEmisoraDisplay.setColumns(10);
 		
-		JButton backEmisora = new JButton("<--");
+		backEmisora = new JButton("<--");
 		backEmisora.setBounds(107, 119, 49, 23);
 		panel.add(backEmisora);
 		
@@ -87,51 +102,51 @@ public class GUIRadio extends JFrame {
 		forwardEmisora.setBounds(251, 119, 49, 23);
 		panel.add(forwardEmisora);
 		
-		JButton buttonEmisora1 = new JButton("1");
+		buttonEmisora1 = new JButton("1");
 		buttonEmisora1.setBounds(27, 153, 39, 23);
 		panel.add(buttonEmisora1);
 		
-		JButton buttonEmisora2 = new JButton("2");
+		buttonEmisora2 = new JButton("2");
 		buttonEmisora2.setBounds(76, 153, 39, 23);
 		panel.add(buttonEmisora2);
 		
-		JButton buttonEmisora3 = new JButton("3");
+		buttonEmisora3 = new JButton("3");
 		buttonEmisora3.setBounds(127, 153, 39, 23);
 		panel.add(buttonEmisora3);
 		
-		JButton buttonEmisora4 = new JButton("4");
+		buttonEmisora4 = new JButton("4");
 		buttonEmisora4.setBounds(176, 153, 39, 23);
 		panel.add(buttonEmisora4);
 		
-		JButton buttonEmisora5 = new JButton("5");
+		buttonEmisora5 = new JButton("5");
 		buttonEmisora5.setBounds(225, 153, 39, 23);
 		panel.add(buttonEmisora5);
 		
-		JButton buttonEmisora6 = new JButton("6");
+		buttonEmisora6 = new JButton("6");
 		buttonEmisora6.setBounds(274, 153, 39, 23);
 		panel.add(buttonEmisora6);
 		
-		JButton buttonEmisora7 = new JButton("7");
+		buttonEmisora7 = new JButton("7");
 		buttonEmisora7.setBounds(323, 153, 39, 23);
 		panel.add(buttonEmisora7);
 		
-		JButton buttonEmisora8 = new JButton("8");
+		buttonEmisora8 = new JButton("8");
 		buttonEmisora8.setBounds(372, 153, 39, 23);
 		panel.add(buttonEmisora8);
 		
-		JButton buttonEmisora9 = new JButton("9");
+		buttonEmisora9 = new JButton("9");
 		buttonEmisora9.setBounds(86, 193, 49, 23);
 		panel.add(buttonEmisora9);
 		
-		JButton buttonEmisora10 = new JButton("10");
+		buttonEmisora10 = new JButton("10");
 		buttonEmisora10.setBounds(147, 193, 49, 23);
 		panel.add(buttonEmisora10);
 		
-		JButton buttonEmisora11 = new JButton("11");
+		buttonEmisora11 = new JButton("11");
 		buttonEmisora11.setBounds(206, 193, 49, 23);
 		panel.add(buttonEmisora11);
 		
-		JButton buttonEmisora12 = new JButton("12");
+		buttonEmisora12 = new JButton("12");
 		buttonEmisora12.setBounds(271, 193, 49, 23);
 		panel.add(buttonEmisora12);
 		
@@ -182,6 +197,7 @@ private class MiListener implements ActionListener{
 				buttonEmisora10.disable();
 				buttonEmisora11.disable();
 				buttonEmisora12.disable();
+			}
 			else{
 				btnAmfm.enable();
 				backEmisora.enable();
@@ -202,7 +218,8 @@ private class MiListener implements ActionListener{
 				buttonEmisora11.enable();
 				buttonEmisora12.enable();
 			}
-			}
+		}
+			
 		if (e.getSource()==btnAmfm){
 			carRadio.setFrecuencia(carRadio.getFrecuencia());
 			boolean freq = carRadio.getFrecuencia();
@@ -233,7 +250,42 @@ private class MiListener implements ActionListener{
 			carRadio.setEmisora(emi);
 			txtEmisora.setText(String.valueOf(emi));
 		}
-		if (e.getSource()==buttonEmisora1()){
+		if (e.getSource()== buttonEmisora1){
 			carRadio.saveEmisora(1, carRadio.getEmisora());
 		}
+		if (e.getSource()== buttonEmisora2){
+			carRadio.saveEmisora(2, carRadio.getEmisora());
 		}
+		if (e.getSource()== buttonEmisora3){
+			carRadio.saveEmisora(3, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora4){
+			carRadio.saveEmisora(4, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora5){
+			carRadio.saveEmisora(5, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora6){
+			carRadio.saveEmisora(6, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora7){
+			carRadio.saveEmisora(7, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora8){
+			carRadio.saveEmisora(8, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora9){
+			carRadio.saveEmisora(9, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora10){
+			carRadio.saveEmisora(10, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora11){
+			carRadio.saveEmisora(11, carRadio.getEmisora());
+		}
+		if (e.getSource()== buttonEmisora12){
+			carRadio.saveEmisora(12, carRadio.getEmisora());
+		}
+		}
+}
+}
