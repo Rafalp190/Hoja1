@@ -13,11 +13,16 @@ import javax.swing.SwingConstants;
 
 public class GUIRadio extends JFrame {
 
+	
+	//Crea objeto
+	private Radio carRadio = new RadioCarro();
+	
+	
+	//ATRIBUTOS del GUI
 	private JPanel contentPane;
 	private JTextField textFieldAMyFM;
 	private JTextField txtEmisora;
 	private JTextField textFieldEmisoraDisplay;
-	private RadioCarro carRadio;
 	private JButton forwardEmisora;
 	private JButton botoONyOFF;
 	private JButton btnAmfm;
